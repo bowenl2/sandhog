@@ -180,7 +180,7 @@ func main() {
 			logger.Println(err)
 			break
 		}
-		go handleConn(conn, configData)
+		go handleConn(conn, *configData)
 	}
 	// Serve HTTP with your SSH server acting as a reverse proxy.
 	http.Serve(listener, http.HandlerFunc(func(resp http.ResponseWriter, req *http.Request) {
